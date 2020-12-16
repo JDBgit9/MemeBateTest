@@ -11,7 +11,7 @@ export const Media = () => {
                 .then(data => {
                     setMedia([...media, ...data])
                 })
-              .catch(console.errror)
+              .catch(console.error)
     }, []);
 
     return (
