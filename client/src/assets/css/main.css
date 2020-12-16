@@ -768,3 +768,21 @@ input {
     padding-bottom: 50px;
   }
 }
+
+.videos {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 30px;
+}
+
+.videos > iframe {
+  padding: 15px;
+}
+
+@media (max-width: 380px) {
+  .videos {
+    display: grid;
+    grid-template-columns: 90%;
+  }
+}
+

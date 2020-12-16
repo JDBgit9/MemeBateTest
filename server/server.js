@@ -36,13 +36,17 @@ app.get("/media", async (request, response) => {
       response.status(500).send(error);
   }
 });
-app.post("/media", async (request, response)=> {
+app.post("/media", async (request, response) => {
   const media = new Media(request.body);
-  console.log(media)
-  media.save(function(error){
-    if(error){console.error(error)} 
-    else{console.log("save to database"); response.status(200).send(request.body)}
 
+  media.save(error => {
+    if(error){
+      console.error(error)
+    }
+    else{
+      console.log("Save to database");
+      response.status(200).send(request.body)
+    }
   })
 })
 

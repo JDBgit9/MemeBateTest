@@ -18,7 +18,9 @@ function EditProfile(props) {
   const [debate, setDebate] = useState("");
 
   console.log(title);
-  const handleSubmit = () => {
+
+  const handleSubmit = event => {
+
     let request = {
       debate,
       title,
@@ -29,15 +31,13 @@ function EditProfile(props) {
       source2,
       source3,
     };
-    const res = axios.post('http://localhost:4041/media', request).then(function (response) {
 
-      console.log(response);
-    }) 
-    .catch(err => {
-
-      // what now?
-      console.log(err);
-  })
+    const res = axios
+      .post('http://localhost:4041/media', request)
+      .then(response => {
+        // The response of the post will be an Ok (ack)
+      })
+      .catch(console.error)
   };
 
   return (

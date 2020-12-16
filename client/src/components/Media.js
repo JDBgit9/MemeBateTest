@@ -10,18 +10,12 @@ export const Media = () => {
                 .then(response => response.json())
                 .then(data => {
                     setMedia([...media, ...data])
-                    console.log(data);
                 })
-              .catch(err => {
-                debugger;
-                console.error(err);
-              })           
-        console.log(media)
+              .catch(console.errror)
     }, []);
 
-
     return (
-        <>
+        <div className='videos'>
             {
                 media.length > 0 && media.map((video, index) => {
                     return (
@@ -33,10 +27,10 @@ export const Media = () => {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         key={`video_${index}`}
-                      ></iframe>                        
+                      ></iframe>
                     )
                 })
             }
-        </>
+        </div>
     )
 };
