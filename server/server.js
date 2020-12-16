@@ -7,13 +7,14 @@ const stream = require("getstream");
 const { MongoClient } = require("mongodb");
 const Media = require("./models/media");
 const mongoose = require("mongoose");
+const { response } = require('express');
 
 const user = new MongoClient(
   "mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/?retryWrites=true&w=majority"
 );
 
 
-mongoose.connect("mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/Workout-Tracker?retryWrites=true&w=majority", {});
+mongoose.connect("mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/Memebate?retryWrites=true&w=majority", {});
 
 mongoose.connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
@@ -35,6 +36,15 @@ app.get("/media", async (request, response) => {
       response.status(500).send(error);
   }
 });
+app.post("/media", async (request, response)=> {
+  const media = new Media(request.body);
+  console.log(media)
+  media.save(function(error){
+    if(error){console.error(error)} 
+    else{console.log("save to database"); response.status(200).send(request.body)}
+
+  })
+})
 
 app.get("/", async function(req, res){
   try{

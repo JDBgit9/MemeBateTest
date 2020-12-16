@@ -29,7 +29,7 @@ function EditProfile(props) {
       source2,
       source3,
     };
-    const res = axios.post('http:localhost:4041/media', request).then(function (response) {
+    const res = axios.post('http://localhost:4041/media', request).then(function (response) {
 
       console.log(response);
     }) 

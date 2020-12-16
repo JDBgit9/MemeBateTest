@@ -11,7 +11,7 @@ const mediaSchema = new Schema({
   source2: { type: String },
   source3: { type: String },
   tags: { type: String },
-  points: { type: Number, required: true, default: 10 },
+  points: { type: Number, required: true, default: 100 },
   memebaters: { type: Number, required: true, default: 0 },
   wins: { type: Number, required: true, default: 0 },
   losses: { type: Number, required: true, default: 0 }
