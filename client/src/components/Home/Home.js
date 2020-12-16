@@ -6,6 +6,7 @@ import {useAuth0} from "@auth0/auth0-react"
 import { Media } from "../Media";
 
 function Home() {
+  const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
   return (
     <>
       <header className="masthead">
@@ -121,7 +122,7 @@ function Home() {
       <div id="portfolio">
         <div className="container-fluid p-0">
           <div className="row no-gutters">
-            <Media />
+            {isAuthenticated && <Media />}
            </div>
            </div>
       </div>
