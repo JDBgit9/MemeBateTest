@@ -5,20 +5,30 @@ const PORT = 4041;
 const cors = require("cors");
 const stream = require("getstream");
 const { MongoClient } = require("mongodb");
-// const Media = require("./models/media");
+const Media = require("./models/media");
+const mongoose = require("mongoose");
 
 const user = new MongoClient(
   "mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/?retryWrites=true&w=majority"
 );
+
 const userFlatFeed = stream.connect(
   "h8mj85cvam2q",
   "pcekttsymy7znf3pm9t5qwdcp2gzcsrhmhx8katk6wmwygakhxgyyykxsz252dqg",
   "103679"
 );
+
+
+mongoose.connect(process.env.MONGODB_URI);
+
+mongoose.connection?.once("open", () => {
+  console.log("\x1b[36m%s\x1b[0m'", "MongoDB database connection established successfully");
+});
+
 app.use(cors({ origin: true }));
 
 app.use(express.json());
-console.log("BEFORE API ENDPOINTS");
+
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
   try {
@@ -27,12 +37,10 @@ app.get("/media", async (request, response) => {
       console.log(result);
       response.send(result);
   } catch (error) {
-      console.log("MEDIA FINISHED ERROR\n");
-      console.log(error);
+      console.error("MEDIA FINISHED ERROR: ", error);
       response.status(500).send(error);
   }
 });
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/media");
 
 app.get("/", async function(req, res){
   try{

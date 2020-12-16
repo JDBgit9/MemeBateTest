@@ -13,7 +13,11 @@ export const Media = () => {
                 .then(data => {
                     debugger;
                     console.log(data);
-                });
+                })
+              .catch(err => {
+                debugger;
+                console.error(err);
+              })
             
            let x = [{
                 debate: 'AYP8-oxq8ig',
