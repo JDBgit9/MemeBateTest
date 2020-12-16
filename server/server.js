@@ -13,7 +13,7 @@ const user = new MongoClient(
 );
 
 
-mongoose.connect("mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/?retryWrites=true&w=majority", {});
+mongoose.connect("mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/Workout-Tracker?retryWrites=true&w=majority", {});
 
 mongoose.connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
