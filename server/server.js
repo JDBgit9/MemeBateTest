@@ -21,7 +21,7 @@ const userFlatFeed = stream.connect(
 
 mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connection?.once("open", () => {
+mongoose.connection.once("open", () => {
   console.log("\x1b[36m%s\x1b[0m'", "MongoDB database connection established successfully");
 });
 
