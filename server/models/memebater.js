@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+const { ObjectID } = require("mongodb");
+const { ObjectId } = require("mongodb");
 const Schema = mongoose.Schema;
 
-const memebateSchema = new Schema({
-
-
+const MemebaterSchema = new Schema({
+id:{type: ObjectId, required:true },
 like: { type: String, required: true },
 dislike: { type: String, required: true },
 memes: { type: String, required: true },
@@ -19,6 +20,6 @@ tags: { type: String }
 });
 
 
-const Memebate = mongoose.model("memebate", MemebateSchema);
+const Memebater = mongoose.model("memebater", MemebaterSchema);
 
-module.exports = Memebate;
+module.exports = Memebater;

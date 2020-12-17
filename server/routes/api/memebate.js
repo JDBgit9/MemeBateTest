@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const memebateController = require("../../controllers/memebate");
+// const Memebate = require(path.join(__dirname, "./memebate"));
 
 // Matches with "/api/books"
 router.route("/")
