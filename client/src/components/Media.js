@@ -5,12 +5,15 @@ export const Media = () => {
     const [media, setMedia] = useState([]);
 
     useEffect(() => {
-            fetch('http://localhost:4041/media')
+            if(media.length ===0) {
+                fetch('http://localhost:4041/media')
                 .then(response => response.json())
                 .then(data => {
                     setMedia([...media, ...data])
                 })
               .catch(console.error)
+            }
+         
     }, [media]);
 
     return (

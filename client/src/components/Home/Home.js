@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import logo from "./WebMBimg.png";
 import {useAuth0} from "@auth0/auth0-react"
 import { Media } from "../Media";
+import Memebater from "../Memebater";
 
 function Home() {
   const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
