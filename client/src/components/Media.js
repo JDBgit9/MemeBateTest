@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 
-
 export const Media = () => {
 
     const [media, setMedia] = useState([]);
@@ -12,7 +11,7 @@ export const Media = () => {
                     setMedia([...media, ...data])
                 })
               .catch(console.error)
-    }, []);
+    }, [media]);
 
     return (
         <div className='videos'>

@@ -8,13 +8,14 @@ const { MongoClient } = require("mongodb");
 const Media = require("./models/media");
 const mongoose = require("mongoose");
 const { response } = require('express');
+// const { default: Memebater } = require('../client/src/components/Memebater');
 
 const user = new MongoClient(
   "mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/?retryWrites=true&w=majority"
 );
 
 
-mongoose.connect("mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/Memebate?retryWrites=true&w=majority", {});
+mongoose.connect("mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/Memebater?retryWrites=true&w=majority", {});
 
 mongoose.connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
@@ -60,11 +61,11 @@ app.post("/media", async function(req, res){
   if(req.body){
   try{
     await client.connect();
-    client.db("Memebate").collection("media").insertOne(req.body, function(err, res){
+    client.db("Memebater").collection("media").insertOne(req.body, function(err, res){
       if(err) throw err;
       console.log("one record inserted");
       client.close();
-    }).createCollection("memebates")
+    }).createCollection("memebater")
     res.status(200).json({message: req.body})
   } catch(e){
     console.error(e)
@@ -77,6 +78,31 @@ async function listDatabases(client) {
   console.log("Databases:");
   databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
 }
+app.get("/memebater", async (request, response) => {
+  console.log("MEMEBATER IS BEING REQUESTED");
+  try {
+      let result = await Me.find().exec();
+      console.log("MEMEBATER FINISHED SUCCESS\n");
+      console.log(result);
+      response.send(result);
+  } catch (error) {
+      console.error("MEMEBATER FINISHED ERROR: ", error);
+      response.status(500).send(error);
+  }
+});
+app.post("/memebater", async (request, response) => {
+  const memebater = new Memebater(request.body);
+
+  memebater.save(error => {
+    if(error){
+      console.error(error)
+    }
+    else{
+      console.log("Save to database");
+      response.status(200).send(request.body)
+    }
+  })
+})
 
 app.listen(PORT, function (error) {
   if (error) console.log("listen error", error);
