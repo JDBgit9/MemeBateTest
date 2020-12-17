@@ -1,5 +1,5 @@
-const PORT = process.env.PORT || 3000;
-app.listen(port, () => console.log('listening on port 3000'));
+const PORT = process.env.PORT || 5000;
+app.listen(port, () => console.log('listening on port 5000'));
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");

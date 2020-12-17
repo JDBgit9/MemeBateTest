@@ -1,14 +1,15 @@
 require("dotenv/config");
-const PORT = process.env.PORT || 3000;
-app.listen(port, () => console.log('listening on port 3000'));
+const PORT = process.env.PORT || 5000;
+// app.listen(port, () => console.log('listening on port 5000'));
 const express = require("express");
 const app = express();
-const PORT = 4041;
+// const PORT = 4041;
 const cors = require("cors");
 const { MongoClient } = require("mongodb");
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 const mongoose = require("mongoose");
+const distDir = __dirname + "/dist/";
 
 
 const user = new MongoClient(
@@ -27,6 +28,7 @@ mongoose.connection.once("open", () => {
 app.use(cors({ origin: true }));
 
 app.use(express.json());
+app.use(express.static(distDir));
 
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
