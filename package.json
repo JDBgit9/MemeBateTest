@@ -4,9 +4,10 @@
   "description": "Mern Demo",
   "main": "./server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "webpack-dev-server --mode development --hot --open --port $PORT",
     "start:prod": "node server.js",
     "start:dev": "nodemon server.js",
+    "build": "npm i -dev && webpack --mode production",
     "seed": "node scripts/seedDB.js",
     "heroku-postbuild": "npm run build"
   },
