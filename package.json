@@ -13,6 +13,10 @@
   "author": "James D Beeks",
   "license": "MIT",
   "dependencies": {
+    "react": "^17.0.1",
+    "react-activity-feed": "^0.10.4",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1"
   },
   "repository": {
