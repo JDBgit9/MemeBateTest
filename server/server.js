@@ -1,6 +1,5 @@
 require("dotenv/config");
 const PORT = process.env.PORT || 3000;
-
 const express = require("express");
 const app = express();
 // const PORT = 4041;
@@ -26,7 +25,7 @@ mongoose.connection.once("open", () => {
 });
 
 app.use(cors({ origin: true }));
-app.listen(port_number);
+app.listen(process.env.PORT || 3000);
 app.use(express.json());
 app.use(express.static(distDir));
 
