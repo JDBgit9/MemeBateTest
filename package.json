@@ -4,10 +4,11 @@
   "description": "Mern Demo",
   "main": "./server.js",
   "scripts": {
-    "start": "cd server && npm run start:prod && cd ../client && npm run start && cd ..",
-    "startdev": "cd server && npm run start:dev && cd ../client && npm run start && cd ..",
-    "start:prod": "node server.js",
-    "start:dev": "nodemon server.js",
+    "startserverprod": "cd server && npm run start:prod",
+    "startclientinenv": "cd client && npm run start",
+    "start": "concurrently \"npm run startserverprod\" \"npm run startclientinenv\"",
+    "startserverdev": "cd server && npm run start:dev",
+    "start:dev": "concurrently \"npm run startserverdev\" \"npm run startclientinenv\"",
     "seed": "node scripts/seedDB.js",
     "build": "npm install && cd server && npm run build && cd ../client && npm run build && cd .."
   },
@@ -20,12 +21,13 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
-    "web-vitals": "^0.2.4",
+    "concurrently": "^5.3.0",
     "react": "^17.0.1",
     "react-activity-feed": "^0.10.4",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.1"
+    "react-scripts": "^4.0.1",
+    "web-vitals": "^0.2.4"
   },
   "repository": {
     "type": "git",
