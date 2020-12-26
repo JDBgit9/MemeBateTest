@@ -1,7 +1,6 @@
 //@flow
 import React from "react";
 import Nav from "./components/Nav/Nav";
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import user from "./components/Nav/Nav";
 import Login from "./components/Login/Login";
@@ -26,11 +25,7 @@ export default function App() {
             <Nav />
             <Home />
           </Route>
-          {/* <Route path="/">
-            <Home />
-          </Route> */}
         </Switch>
-        {/* </div> */}
       </Router>
   );
 }
