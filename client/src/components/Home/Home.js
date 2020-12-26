@@ -125,6 +125,7 @@ function Home() {
           <div className="row no-gutters">
             {isAuthenticated && <Media />}
            </div>
+           {isAuthenticated && <Memebater />}
            </div>
       </div>
 

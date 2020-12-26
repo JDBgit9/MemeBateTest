@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import EditProfile from "./components/EditProfile";
 import "./AppStyles.css";
 import "./AppStyles.module.css";
+import Memebater from "./components/Memebater";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/">
             <Nav />
             <Home />
+            <Memebater />
           </Route>
         </Switch>
       </Router>

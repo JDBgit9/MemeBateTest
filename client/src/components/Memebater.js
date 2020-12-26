@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+// import "./AppStyles.module.css";
 
 export const Memebater = () => {
   const [memebater, setMemebater] = useState([]);
 
   useEffect(() => {
     if(memebater.length ===0) {
-    fetch("http://localhost:4041/memebater")
+    fetch("http://localhost:3000/memebater")
       .then((response) => response.json())
       .then((data) => {
         setMemebater([...memebater, ...data]);
@@ -19,9 +20,11 @@ export const Memebater = () => {
       return (
         <>
           <div className="memebater">
-            <div className="memename">{item.memename}</div>
-            <img src={item.meme} alt="meme" />
-            <button>A button!</button>
+            <h3>Name</h3>
+            <p>This is the memebate section</p>
+            <h3>Number of likes</h3>
+            <h3> Number of Dislikes</h3>
+            <button onClick={console.log}>MemeBate</button>
           </div>
         </>
       );
