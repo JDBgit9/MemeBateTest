@@ -54,8 +54,8 @@ function EditProfile(props) {
         <div className="profile_left">
           <h1 className={`${className} font-xl`}>Memebate</h1>
           <h2>Profile page</h2>
-          <p>{user.name}</p>
-          <p className={`${className} font-md`}>
+          {/* <p>{user.name}</p> */}
+          <p className="points">
             Congratulations you have 100 points!
           </p>
           <img
@@ -72,6 +72,7 @@ function EditProfile(props) {
             height: "90%",
             margin: "2rem",
             border: "2px solid black",
+            justifyContent: "space-around",
             background: "blue",
             padding: "1rem",
           }}

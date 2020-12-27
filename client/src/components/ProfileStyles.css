@@ -5,6 +5,9 @@ body {
 .primary {
     color: #3F729B;
 }
+p {
+    color: white;
+}
 .font-xl {
     font-size: 40px;
 }
@@ -17,5 +20,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 10px;
+    margin-left: 10px;
 }
 
