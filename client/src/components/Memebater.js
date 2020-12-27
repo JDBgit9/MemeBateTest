@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "./AppStyles.module.css";
+
 
 export const Memebater = () => {
   const [memebater, setMemebater] = useState([]);
