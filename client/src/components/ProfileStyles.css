@@ -1,10 +1,21 @@
-.root {
-    background-image: url("../components/Home/tribunepodium.jpg");
+body {
+    background-image: url("../components/Home/wdbg.png");
+    background-repeat: no-repeat;
     }
 .primary {
     color: #3F729B;
 }
 .font-xl {
     font-size: 40px;
+}
+.memebater {
+    height: 300px;
+    width: 300px;
+    background: blue;
+    border: 2px solid black;
+    border-radius: 30px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 

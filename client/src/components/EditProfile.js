@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./ProfileStyles.css";
 import axios from "axios";
-// import Memebater from "./Memebater"
+import Memebater from "./Memebater"
 
 
 function EditProfile(props) {
@@ -72,7 +72,7 @@ function EditProfile(props) {
             height: "90%",
             margin: "2rem",
             border: "2px solid black",
-            background: "red",
+            background: "blue",
             padding: "1rem",
           }}
           className="profile_right"
@@ -154,7 +154,14 @@ function EditProfile(props) {
           />
           <button onClick={handleSubmit}>Submit</button>
         </div>
-        <div></div>
+        <div>
+        <div className="memebater">
+            <p>This is the memebate section</p>
+            <h3>Number of likes</h3>
+            <h3> Number of Dislikes</h3>
+            <button onClick={console.log}>MemeBate</button>
+          </div>
+        </div>
       </div>
     )
   );
