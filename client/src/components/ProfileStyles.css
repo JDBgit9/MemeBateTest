@@ -1,6 +1,7 @@
 body {
-    background-image: url("../components/Home/wdbg.png");
+    background-image: url("../components/Home/WebMBimg.png");
     background-repeat: no-repeat;
+    background-position: center;
     }
 .primary {
     color: #3F729B;

@@ -52,9 +52,8 @@ function EditProfile(props) {
       >
 
         <div className="profile_left">
-          <h1 className={`${className} font-xl`}>Memebate</h1>
-          <h2>Profile page</h2>
-          {/* <p>{user.name}</p> */}
+          <h1 className={`${className} font-xl`}>Memebers</h1>
+          <h2></h2>
           <p className="points">
             Congratulations you have 100 points!
           </p>
