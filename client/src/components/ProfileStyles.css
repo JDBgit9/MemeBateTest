@@ -1,7 +1,8 @@
 body {
-    background-image: url("../components/Home/WebMBimg.png");
+    background-image: url("../components/Home/tribunepodium.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     }
 .primary {
     color: #3F729B;
