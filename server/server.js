@@ -8,7 +8,6 @@ const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 const mongoose = require("mongoose");
 const distDir = __dirname + "/dist/";
-
 const user = new MongoClient(
   "mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/?retryWrites=true&w=majority"
 );
