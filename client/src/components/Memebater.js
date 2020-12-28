@@ -22,9 +22,10 @@ export const Memebater = () => {
         <>
           <div className="memebater">
             <h3>Name</h3>
-            <p>This is the memebate section</p>
-            <h3>Number of likes</h3>
-            <h3> Number of Dislikes</h3>
+            <p>Membates</p>
+            <h3>likes</h3>
+            <h3>Dislikes</h3>
+            <image>Meme</image>
             <button onClick={console.log}>MemeBate</button>
           </div>
         </>

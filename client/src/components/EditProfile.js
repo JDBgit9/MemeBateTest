@@ -62,7 +62,7 @@ function EditProfile(props) {
             src="https://imagery.zoogletools.com/u/166069/dc6cfc08abcd4c18efea413f74383db421beea8d/350w/05dbb3ff-b33b-4db1-8559-438a79af7f35.jpeg"
           />
           <p>{user.email}</p>
-          <h3>Let's get started</h3>
+          <h3>Begin</h3>
         </div>
 
         <div
@@ -156,12 +156,23 @@ function EditProfile(props) {
         </div>
         <div>
         <div className="memebater">
-            <p>This is the memebate section</p>
-            <h3>Number of likes</h3>
-            <h3> Number of Dislikes</h3>
+            <p>Memebates</p>
+            <h4>likes</h4>
+            <h4>Dislikes</h4>
+            <image>Meme</image>
             <button onClick={console.log}>MemeBate</button>
           </div>
         </div>
+        <br>
+        </br>
+        <footer className="bg-primary py-5">
+        <div className="container">
+          <div className="small text-center text-white">
+            Copyright © 2020 - MemeBate App is currently a UCF online coding
+            Bootcamp project. All Rights reserved.
+          </div>
+        </div>
+      </footer>
       </div>
     )
   );
