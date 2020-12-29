@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./ProfileStyles.css";
 import axios from "axios";
-import Memebater from "./Memebater"
+import { Memebater } from "./Memebater"
+import { Meme }  from "./Meme";
 
 
 function EditProfile(props) {

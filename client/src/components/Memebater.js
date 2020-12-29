@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ProfileStyles.css";
-
+import { Meme } from "./Meme";
 
 export const Memebater = () => {
   const [memebater, setMemebater] = useState([]);
@@ -26,7 +26,7 @@ export const Memebater = () => {
             <h3>likes</h3>
             <h3>Dislikes</h3>
             <image>Meme</image>
-            <button onClick={console.log}>MemeBate</button>
+            <button onClick={console.log}>Meme</button>
           </div>
         </>
       );
