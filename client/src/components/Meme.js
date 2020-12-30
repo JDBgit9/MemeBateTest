@@ -6,6 +6,7 @@ export const Meme = () => {
   const [meme, setMeme] = useState([]);
   const [memeIndex, setMemeIndex] = useState(0);
   const [captions, setCaptions] = useState([]);
+  const api = "384be08c76d654f4105db56ec7dd11";
 
   const history = useHistory();
 
@@ -25,22 +26,9 @@ export const Meme = () => {
   const generateMeme = () => {
     const currentMeme = meme[memeIndex];
     const formData = new FormData();
-
-    formData.append("username", "portexe");
-    formData.append("password", "abc123");
     formData.append("template_id", currentMeme.id);
     captions.forEach((c, index) => formData.append(`boxes[${index}][text]`, c));
-
-    fetch("https://api.imgflip.com/caption_image", {
-      method: "PUT",
-      body: formData,
-    }).then((res) => {
-      res.json().then((res) => {
-        history.push(`/generated?url=${res.data.url}`);
-      });
-    });
-  };
-
+  }
   const shuffleMeme = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * i);
@@ -51,15 +39,13 @@ export const Meme = () => {
   };
 
   useEffect(() => {
-    fetch("https://api.imgflip.com/get_meme", {
-      mode: "no-cors",
-      method: "GET",
-    })
+    fetch("http://memebuild.com/api/1.0/getDefaultMemes?api-key="+api)
       .then((res) => {
         res.json();
       })
       .then((res) => {
-        const _meme = res.data.meme;
+        const _meme = res;
+        console.log(res)
         shuffleMeme(_meme);
         setMeme(_meme);
       }).catch(error=>{
@@ -72,8 +58,7 @@ export const Meme = () => {
       setCaptions(Array(meme[memeIndex].box_count).fill(""));
     }
   }, [memeIndex, meme]);
-
-  return meme.length ? (
+  return meme.length > 0? (
     <div className={styles.container}>
       <button onClick={generateMeme} className={styles.generate}>
         Generate
@@ -92,4 +77,4 @@ export const Meme = () => {
   ) : (
     <></>
   );
-};
+}

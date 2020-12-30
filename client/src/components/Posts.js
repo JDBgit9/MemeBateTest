@@ -1,25 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react'
 
-export const Media = () => {
 
-    const [media, setMedia] = useState([]);
-
+function Posts() {
+    const [posts, setPosts]=useState([]);
     useEffect(() => {
-            if(media.length ===0) {
-                fetch('http://localhost:4041/media')
-                .then(response => response.json())
-                .then(data => {
-                    setMedia([...media, ...data])
-                })
-              .catch(console.error)
-            }
-         
-    }, [media]);
-
+        if(posts?.length ===0) {
+            fetch('http://localhost:4041/media')
+            .then(response => response.json())
+            .then(data => {
+                setPosts([...posts, ...data])
+            })
+          .catch(console.error)
+        }
+    }, [])
     return (
         <div className='videos'>
             {
-                media.length > 0 && media.map((video, index) => {
+               posts?.length > 0 &&posts.map((video, index) => {
                     return (
                         <iframe
                         width="385"
@@ -35,4 +32,6 @@ export const Media = () => {
             }
         </div>
     )
-};
+}
+
+export default Posts

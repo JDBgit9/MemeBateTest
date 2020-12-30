@@ -4,7 +4,7 @@ import "./ProfileStyles.css";
 import axios from "axios";
 import { Memebater } from "./Memebater"
 import { Meme }  from "./Meme";
-
+import Posts from "./Posts";
 
 function EditProfile(props) {
   let className = props.primary ? "primary" : "";
@@ -176,6 +176,7 @@ function EditProfile(props) {
             <button onClick={console.log}>MemeBate</button>
           </div>
         </div>
+<Posts />
         <br>
         </br>
         <footer className="bg-primary py-5">
