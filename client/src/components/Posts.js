@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useState, useEffect } from 'react';
+import Meme from "./Meme";
 
 function Posts() {
     const [posts, setPosts]=useState([]);
@@ -14,10 +14,12 @@ function Posts() {
         }
     }, [])
     return (
+
         <div className='videos'>
             {
                posts?.length > 0 &&posts.map((video, index) => {
                     return (
+                        <div className="Memebates">
                         <iframe
                         width="385"
                         height="315"
@@ -27,6 +29,8 @@ function Posts() {
                         allowFullScreen
                         key={`video_${index}`}
                       ></iframe>
+                      <Meme id={video.id}/>
+                      </div>
                     )
                 })
             }

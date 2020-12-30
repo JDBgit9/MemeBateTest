@@ -9,7 +9,7 @@ import EditProfile from "./components/EditProfile";
 import "./AppStyles.css";
 import "./AppStyles.module.css";
 import Memebater from "./components/Memebater";
-import { Meme } from "./components/Meme";
+import  Meme  from "./components/Meme";
 
 export default function App() {
   return (

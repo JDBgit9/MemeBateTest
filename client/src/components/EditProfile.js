@@ -55,12 +55,12 @@ function EditProfile(props) {
 
   return (
     isAuthenticated && (
-      <div 
+      <div className="profile"
         stlyle={{
           display: "flex",
           justifyContent: "space-around",
           background: "green",
-          margin: "18px 50px",
+          margin: "18px 50px"
         }}
       >
 
@@ -75,21 +75,8 @@ function EditProfile(props) {
             src="https://imagery.zoogletools.com/u/166069/dc6cfc08abcd4c18efea413f74383db421beea8d/350w/05dbb3ff-b33b-4db1-8559-438a79af7f35.jpeg"
           />
           <p>{user.email}</p>
-          <h3>Begin</h3>
-        </div>
-
-        <div
-          style={{
-            width: "15%",
-            height: "90%",
-            margin: "2rem",
-            border: "2px solid black",
-            justifyContent: "space-around",
-            background: "blue",
-            padding: "1rem",
-          }}
-          className="profile_right"
-        >
+          <h3>Begin Debate</h3>
+          <div className="form">
           <select
             value={category}
             defaultValue=""
@@ -166,8 +153,11 @@ function EditProfile(props) {
             onChange={(e) => setSource3(e.target.value)}
           />
           <button onClick={handleSubmit}>Submit</button>
+          </div>
         </div>
-        <div>
+
+        <div className="profile_right">
+         
         <div className="memebater">
             <p>Memebates</p>
             <h4>likes</h4>
@@ -175,18 +165,8 @@ function EditProfile(props) {
             <image>Meme</image>
             <button onClick={console.log}>MemeBate</button>
           </div>
+          <Posts />
         </div>
-<Posts />
-        <br>
-        </br>
-        <footer className="bg-primary py-5">
-        <div className="container">
-          <div className="small text-center text-white">
-            Copyright © 2020 - MemeBate App is currently a UCF online coding
-            Bootcamp project. All Rights reserved.
-          </div>
-        </div>
-      </footer>
       </div>
     )
   );
