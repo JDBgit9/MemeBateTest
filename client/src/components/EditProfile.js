@@ -36,10 +36,22 @@ function EditProfile(props) {
     const res = axios
       .post('http://localhost:4041/media', request)
       .then(response => {
-        // The response of the post will be an Ok (ack)
+     console.log(response)
+     clearform()
+     alert("media uploaded")
       })
       .catch(console.error)
   };
+  const clearform=()=> {
+    setDebate("");
+    setTitle("");
+    setSynopsis("");
+    setCategory("");
+    setFormat("");
+    setSource1("");
+    setSource2("");
+    setSource3("");
+  }  
 
   return (
     isAuthenticated && (
