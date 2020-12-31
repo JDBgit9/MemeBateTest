@@ -2,9 +2,10 @@ import React from "react";
 import "./Home.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import logo from "./WebMBimg.png";
-import {useAuth0} from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react";
 import { Media } from "../Media";
 import Memebater from "../Memebater";
+import Slider from "../Slider";
 
 function Home() {
   const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
@@ -21,7 +22,10 @@ function Home() {
               <p className="text-white-75 font-weight-light mb-5">
                 A fun digital debate platform without all the fuss.
               </p>
-              <a className="btn btn-primary btn-xl js-scroll-trigger" href="#about">
+              <a
+                className="btn btn-primary btn-xl js-scroll-trigger"
+                href="#about"
+              >
                 Find Out More
               </a>
             </div>
@@ -31,26 +35,26 @@ function Home() {
 
       <section className="page-section bg-primary" id="about">
         <div className="container">
-          <div style={{
-          width: '100%',
-          height: '50rem',
-         textAlign: 'center',
-        }}
-          className="row justify-content-center">
-            <div 
-            className="col-lg-8 text-center">
-              <h2 className="text-white mt-0">
-                Freedom of Speech
-              </h2>
+          <div
+            style={{
+              width: "100%",
+              height: "50rem",
+              textAlign: "center",
+            }}
+            className="row justify-content-center"
+          >
+            <div className="col-lg-8 text-center">
+              <h2 className="text-white mt-0">Freedom of Speech</h2>
               <hr className="divider light my-4" />
               <h3 className="text-white-50 mb-4">
                 Memebate is an application designed to preserve the right to
                 speak freely online without censorship or bias.
                 <br></br>
                 <br></br>
-                As a debater you will create an account and then state your case through a myriad of topics while holding
-                yourself and others accountable through source reporting,
-                points, acquiring memebaters, and winning debates.
+                As a debater you will create an account and then state your case
+                through a myriad of topics while holding yourself and others
+                accountable through source reporting, points, acquiring
+                memebaters, and winning debates.
               </h3>
               <a
                 className="btn btn-light btn-xl js-scroll-trigger"
@@ -70,14 +74,14 @@ function Home() {
           <div className="row">
             <div className="col-lg-3 col-md-6 text-center">
               <div className="mt-5">
-                <i className="fas fa-4x fa-laptop-code text-primary mb-4"></i> 
+                <i className="fas fa-4x fa-laptop-code text-primary mb-4"></i>
                 <h3 className="h4 mb-2">Memebaters</h3>
                 <p className="text-muted mb-0">
                   As a memebater you get to engage in the debates by posting
                   likes, dislikes, memes, gifs, and emojis in the comment
                   section. Memebaters are most important because they are the
                   judges of each of the debates on this platform. So be nice you
-                  never kow you'll meet. You must sign up to become a memebater. 
+                  never kow you'll meet. You must sign up to become a memebater.
                 </p>
               </div>
             </div>
@@ -86,10 +90,10 @@ function Home() {
                 <i className="fas fa-4x fa-gem text-primary mb-4"></i>
                 <h3 className="h4 mb-2">Debaters</h3>
                 <p className="text-muted mb-0">
-                  Debaters simply create an account and then record an audio or video media link
-                  (anonymous, or non-anonymous) to their profile page of their
-                  favorite topic and then watch the fun memebating begin to
-                  unfold.
+                  Debaters simply create an account and then record an audio or
+                  video media link (anonymous, or non-anonymous) to their
+                  profile page of their favorite topic and then watch the fun
+                  memebating begin to unfold.
                 </p>
               </div>
             </div>
@@ -119,15 +123,15 @@ function Home() {
           </div>
         </div>
       </section>
-
       <div id="portfolio">
         <div className="container-fluid p-0">
           <div className="row no-gutters">
-            {isAuthenticated && <Media />}
-           </div>
-           {isAuthenticated && <Memebater />}
-           </div>
-      </div>
+              {isAuthenticated && <Media />}
+            </div>
+          </div>
+          {isAuthenticated && <Memebater />}
+        </div>
+  
 
       <section className="page-section2 text-white">
         <div className="container text-center">
@@ -136,7 +140,7 @@ function Home() {
             className="btn btn-light btn-xl"
             href="https://startbootstrap.com/theme/creative/"
           > */}
-          
+
           <Link className="btn btn-light btn-xl" to="/Login">
             Sign up now!
           </Link>
@@ -152,8 +156,9 @@ function Home() {
               <h2 className="mt-0">Stay In Touch!</h2>
               <hr className="divider my-4" />
               <p className="text-muted mb-5">
-                Want to advertise your business on this site? Give us a call or send
-                us an email and we will get back to you as soon as possible!
+                Want to advertise your business on this site? Give us a call or
+                send us an email and we will get back to you as soon as
+                possible!
               </p>
             </div>
           </div>

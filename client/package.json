@@ -12,13 +12,14 @@
   },
   "type": "module",
   "dependencies": {
-    
+    "bootstrap": "^4.5.3",
+    "node-sass": "^5.0.0"
   },
   "devDependencies": {},
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
+     
     ]
   },
   "browserslist": {
