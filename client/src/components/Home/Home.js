@@ -125,9 +125,9 @@ function Home() {
       </section>
       <div id="portfolio">
         <div className="container-fluid p-0">
-          <div className="carousel-item">
+          {/* <div className="carousel-item">
           {isAuthenticated && <Slider />}
-          </div>
+          </div> */}
           <div className="row no-gutters">
               {isAuthenticated && <Media />}
             </div>
