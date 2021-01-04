@@ -155,9 +155,8 @@ function EditProfile(props) {
           <button onClick={handleSubmit}>Submit</button>
           </div>
         </div>
-
+     
         <div className="profile_right">
-         
         <div className="memebater">
             <p>Memebates</p>
             <h4>likes</h4>

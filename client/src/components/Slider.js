@@ -1,5 +1,6 @@
 import React from "react";
-import { Media } from "./Media";
+import { Media } from "./Home";
+import Memebater from "./Memebater";
 
 
 function Slider() {
