@@ -1,37 +1,38 @@
+//@flow
 import React from "react";
-import axios from "axios";
-import "./styles.css";
+import Nav from "./components/Nav/Nav";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import user from "./components/Nav/Nav";
+import Login from "./components/Login/Login";
+import Home from "./components/Home/Home";
+import EditProfile from "./components/EditProfile";
+import "./AppStyles.css";
+import "./AppStyles.module.css";
+import Memebater from "./components/Memebater";
+import  Meme  from "./components/Meme";
+import Slider from "./components/Slider";
+import { Media } from "./components/Media";
 
-export default class App extends React.Component {
-  state = {
-    users: [],
-  };
-  componentDidMount() {
-    axios.get("/users.json").then((response) => {
-      this.setState({ users: response.data });
-    });
-  }
-
-  render() {
-    const { users } = this.state;
-    return (
-      <div>
-        <ul className="users">
-          {users.map((user) => (
-            <li className="user">
-              <p>
-                <strong>Name:</strong> {user.name}
-              </p>
-              <p>
-                <strong>Email:</strong> {user.email}
-              </p>
-              <p>
-                <strong>City:</strong> {user.address.city}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
+export default function App() {
+  return (
+      <Router>
+        <Switch>
+          <Route path="/profile">
+            <Nav color="dark" />
+            <EditProfile primary={true} />
+          </Route>
+          <Route path="/login">
+            <Nav />
+            <Login />
+          </Route>
+          <Route path="/">
+            <Nav />
+            <Home />
+            {/* <Slider /> */}
+            <Memebater />
+            <Meme />
+          </Route>
+        </Switch>
+      </Router>
+  );
 }

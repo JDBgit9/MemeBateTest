@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const connectDB = require('./config/db')
 const cors = require("cors");
+
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 
@@ -12,7 +13,12 @@ connectDB()
 
 app.use(cors({ origin: true }));
 app.use(express.json());
-app.use(express.static(distDir));
+
+
+// // Define routes
+// router.use("/media", './routes/api/media');
+// router.use("/user", './routes/api/user');
+// router.use("/memebaters", './routes/api/memebater');
 
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
@@ -40,21 +46,21 @@ app.post("/media", async (request, response) => {
   });
 });
 
-app.get("/", async function (req, res) {
-  try {
-    await client.connect();
-    await listDatabases(client);
-  } catch (e) {
-    console.error(e);
-  }
-});
+// app.get("/", async function (req, res) {
+//   // try {
+//   //   await client.connect();
+//   //   await listDatabases(client);
+//   // } catch (e) {
+//   //   console.error(e);
+//   // }
+// });
 
-async function listDatabases(client) {
-  databasesList = await client.db().admin().listDatabases();
+// async function listDatabases(client) {
+//   databasesList = await client.db().admin().listDatabases();
 
-  console.log("Databases:");
-  databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
-}
+//   console.log("Databases:");
+//   databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
+// }
 
 app.get("/memebater", async (request, response) => {
   console.log("MEMEBATER IS BEING REQUESTED");
