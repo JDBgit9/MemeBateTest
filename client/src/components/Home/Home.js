@@ -144,9 +144,9 @@ function Home() {
             href="https://startbootstrap.com/theme/creative/"
           > */}
 
-          <Link className="btn btn-light btn-xl" to="/Login">
+          <a className="btn btn-light btn-xl" onClick={() => loginWithRedirect()}>
             Sign up now!
-          </Link>
+          </a>
 
           {/* </a> */}
         </div>

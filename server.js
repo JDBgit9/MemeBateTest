@@ -5,7 +5,6 @@ const cors = require("cors");
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 
-
 const app = express();
 
 // Connect Database
@@ -97,7 +96,7 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, function (error) {
   if (error) console.log("listen error", error);

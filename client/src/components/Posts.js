@@ -5,7 +5,7 @@ function Posts() {
     const [posts, setPosts]=useState([]);
     useEffect(() => {
         if(posts?.length ===0) {
-            fetch('http://localhost:4041/media')
+            fetch('/media')
             .then(response => response.json())
             .then(data => {
                 setPosts([...posts, ...data])
