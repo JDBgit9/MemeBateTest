@@ -9,8 +9,6 @@ import "./AppStyles.css";
 import "./AppStyles.module.css";
 import Memebater from "./components/Memebater";
 import  Meme  from "./components/Meme";
-import Slider from "./components/Slider";
-import { Media } from "./components/Media";
 
 export default function App() {
   return (
