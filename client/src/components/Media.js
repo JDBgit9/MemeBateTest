@@ -6,7 +6,7 @@ export const Media = () => {
 
     useEffect(() => {
             if(media.length ===0) {
-                fetch('http://localhost:4041/media')
+                fetch('/media')
                 .then(response => response.json())
                 .then(data => {
                     setMedia([...media, ...data])
