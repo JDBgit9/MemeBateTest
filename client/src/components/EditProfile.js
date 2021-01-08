@@ -34,7 +34,7 @@ function EditProfile(props) {
     };
 
     const res = axios
-      .post('http://localhost:4041/media', request)
+      .post('/media', request)
       .then(response => {
      console.log(response)
      clearform()

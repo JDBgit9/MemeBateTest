@@ -7,7 +7,7 @@ export const Memebater = () => {
 
   useEffect(() => {
     if(memebater.length ===0) {
-    fetch("http://localhost:3000/memebater")
+    fetch("/memebater")
       .then((response) => response.json())
       .then((data) => {
         setMemebater([...memebater, ...data]);
