@@ -13,8 +13,6 @@ connectDB()
 
 app.use(cors({ origin: true }));
 app.use(express.json());
-app.use(express.static(distDir));
-
 
 // // Define routes
 // router.use("/media", './routes/api/media');
