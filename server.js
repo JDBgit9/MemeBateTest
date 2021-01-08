@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require("express");
 const connectDB = require('./config/db')
 const cors = require("cors");
@@ -6,7 +5,6 @@ const cors = require("cors");
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 
-const distDir = __dirname + "/dist/";
 
 const app = express();
 
