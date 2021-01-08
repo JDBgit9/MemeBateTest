@@ -65,16 +65,18 @@ function EditProfile(props) {
       >
 
         <div className="profile_left">
-          <h1 className={`${className} font-xl`}>Memebers</h1>
-          <h2></h2>
-          <p className="points">
-            Congratulations you have 100 points!
-          </p>
-          <img
-            style={{ width: "160px", height: "160", borderRadius: "80px" }}
-            src="https://imagery.zoogletools.com/u/166069/dc6cfc08abcd4c18efea413f74383db421beea8d/350w/05dbb3ff-b33b-4db1-8559-438a79af7f35.jpeg"
-          />
-          <p>{user.email}</p>
+          <div className="profile_info">
+            <h1 className={`${className} font-xl`}>Memebers</h1>
+            <h2></h2>
+            <p className="points">
+              Congratulations you have 100 points!
+            </p>
+            <img
+              style={{ width: "160px", height: "160", borderRadius: "80px" }}
+              src={user.picture}
+            />
+            <p>{user.email}</p>
+          </div>
           <h3>Begin Debate</h3>
           <div className="form">
           <select
