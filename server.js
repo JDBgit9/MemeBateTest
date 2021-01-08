@@ -6,6 +6,8 @@ const cors = require("cors");
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 
+const distDir = __dirname + "/dist/";
+
 const app = express();
 
 // Connect Database
@@ -13,6 +15,7 @@ connectDB()
 
 app.use(cors({ origin: true }));
 app.use(express.json());
+app.use(express.static(distDir));
 
 
 // // Define routes

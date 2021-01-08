@@ -1,5 +1,4 @@
 import React from "react";
-import user from "./containers/UserPage";
 import "./Nav.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
@@ -37,7 +36,7 @@ function Nav({color=""}) {
               </Link>
             </li>
             {isAuthenticated ? (
-              <li className="nav-item" onClick={() => logout({returnTo:"http://localhost:3000"})}>
+              <li className="nav-item" onClick={() => logout({returnTo: window.location.origin  })}>
                 Logout
               </li>
             ) : (
