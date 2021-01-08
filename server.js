@@ -1,12 +1,9 @@
-require('dotenv').config();
 const express = require("express");
 const connectDB = require('./config/db')
 const cors = require("cors");
 
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
-
-const distDir = __dirname + "/dist/";
 
 const app = express();
 
@@ -15,8 +12,6 @@ connectDB()
 
 app.use(cors({ origin: true }));
 app.use(express.json());
-app.use(express.static(distDir));
-
 
 // // Define routes
 // router.use("/media", './routes/api/media');
@@ -101,7 +96,7 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, function (error) {
   if (error) console.log("listen error", error);
